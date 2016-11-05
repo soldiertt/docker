@@ -1,0 +1,9 @@
+﻿phpnginx:
+  build: .
+  ports:
+    - "80:80"
+  volumes:
+    - d:\javadev\prj\php:/var/www/html
+    - ./sites-available:/etc/nginx/sites-available
+  external_links:
+    - mysql_mysqldb_1:mysql

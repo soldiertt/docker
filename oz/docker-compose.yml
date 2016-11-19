@@ -1,0 +1,19 @@
+﻿phpnginx:
+  build: ./php
+  ports:
+    - "80:80"
+  volumes:
+    - d:\javadev\prj\php\oz-rest:/var/www/html
+    - ./php/sites-available:/etc/nginx/sites-available
+  links:
+    - mysql
+mysql:
+  build: ./mysql
+  ports:
+    - "3306:3306"
+  environment:
+    - MYSQL_ROOT_PASSWORD=fizzye
+    - MYSQL_DATABASE=oz
+  volumes:
+    - ./mysql/conf:/etc/mysql/conf.d
+    - ./mysql/sql:/docker-entrypoint-initdb.d/

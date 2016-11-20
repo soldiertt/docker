@@ -1,7 +1,7 @@
 ﻿phpnginx:
   build: .
   ports:
-    - "80:80"
+    - "8080:80"
   volumes:
     - d:\javadev\prj\php\:/var/www/html
     - ./sites-available:/etc/nginx/sites-available

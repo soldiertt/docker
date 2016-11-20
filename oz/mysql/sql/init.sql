@@ -28,25 +28,6 @@ insert into certification (id, value) VALUES (104, 'ARET (Agent responsable exé
 
 -- --------------------------------------------------------
 --
--- Structure de la table `security_function`
---
-
-CREATE TABLE IF NOT EXISTS `security_function` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `value` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE(value)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
-
---
--- Contenu de la table `security_function`
---
-insert into security_function (id, value) VALUES (201, 'Fonction 1');
-insert into security_function (id, value) VALUES (202, 'Fonction 2');
-insert into security_function (id, value) VALUES (203, 'Fonction 3');
-
--- --------------------------------------------------------
---
 -- Structure de la table `work_regime`
 --
 
@@ -60,7 +41,6 @@ CREATE TABLE IF NOT EXISTS `work_regime` (
 --
 -- Contenu de la table `work_regime`
 --
-insert into work_regime (id, value) VALUES (301, 'PART_TIME');
 insert into work_regime (id, value) VALUES (302, 'FULL_TIME');
 insert into work_regime (id, value) VALUES (303, '45_TIME');
 insert into work_regime (id, value) VALUES (304, 'HALF_TIME');
@@ -144,14 +124,11 @@ CREATE TABLE IF NOT EXISTS `person` (
   `rescuer` boolean DEFAULT false,
   `grade_id` int(11) NOT NULL,
   `brigade_id` int(11) NOT NULL,
-  `security_function_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (grade_id)
         REFERENCES grade(id),
   FOREIGN KEY (brigade_id)
         REFERENCES brigade(id),
-  FOREIGN KEY (security_function_id)
-        REFERENCES security_function(id),
   UNIQUE(pnr),
   UNIQUE(ssin),
   UNIQUE(badge)
@@ -160,8 +137,8 @@ CREATE TABLE IF NOT EXISTS `person` (
 --
 -- Contenu de la table `person`
 --
-insert into person (id, pnr, firstname, lastname, birthdate, ssin, badge, photo, priv_phone, work_phone, medical_examination_date, rescuer, grade_id, brigade_id, security_function_id) VALUES
-	(1, '0001', 'Jean-Louis', 'Bourlet', '1979-10-12', '79101228913', '3784', null, '0486/41.78.96', null, '2016-02-01', true, 501, 401, 201);
+insert into person (id, pnr, firstname, lastname, birthdate, ssin, badge, photo, priv_phone, work_phone, medical_examination_date, rescuer, grade_id, brigade_id) VALUES
+	(1, '0001', 'Jean-Louis', 'Bourlet', '1979-10-12', '79101228913', '3784', null, '0486/41.78.96', null, '2016-02-01', true, 501, 401);
 
 -- --------------------------------------------------------
 --
@@ -185,8 +162,8 @@ CREATE TABLE IF NOT EXISTS `person_work_regime` (
 --
 -- Contenu de la table `person_work_regime`
 --
-insert into person_work_regime (person_id, work_regime_id, since) VALUES (1, 301, '2016-01-01');
-insert into person_work_regime (person_id, work_regime_id, since) VALUES (1, 302, '2015-01-01');
+insert into person_work_regime (person_id, work_regime_id, since) VALUES (1, 302, '2016-01-01');
+insert into person_work_regime (person_id, work_regime_id, since) VALUES (1, 303, '2015-01-01');
 
 
 -- --------------------------------------------------------

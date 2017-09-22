@@ -5,7 +5,7 @@ services:
         ports:
             - "80:80"
         volumes:
-            - d:\javadev\prj\php\arthurius-rest:/var/www/html
+            - d:\dev\prj\php\arthurius-rest:/var/www/html
             - ./php/sites-available:/etc/nginx/sites-available
         links:
             - mysql

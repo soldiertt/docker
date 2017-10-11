@@ -9,9 +9,16 @@
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
+-- --------------------------------------------------------
+
 --
--- Base de données: `arthuriuarthuriu`
+-- Structure de la table `slider_product`
 --
+
+CREATE TABLE `slider_product`
+(
+  `product_id` INT(11) PRIMARY KEY NOT NULL
+);
 
 -- --------------------------------------------------------
 

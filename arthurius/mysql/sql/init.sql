@@ -784,6 +784,22 @@ alter table product add column promo boolean NOT NULL default false;
 alter table product add column old_price float;
 alter table product add column instock boolean NOT NULL default true;
 alter table product change piece comment varchar(100);
+alter table product drop column ref;
+
+--
+-- Structure de la table `brands`
+--
+
+CREATE TABLE IF NOT EXISTS `brands`
+(
+  `id`         int(11)             NOT NULL AUTO_INCREMENT,
+  `marque`     varchar(50)         NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name_uq` (`marque`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO brands (marque)
+  SELECT distinct(marque) from product order by marque;
 
 
 --

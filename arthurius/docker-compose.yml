@@ -3,7 +3,7 @@ services:
     phpnginx:
         build: ./php
         ports:
-            - "80:80"
+            - 80:80
         volumes:
             - d:\dev\prj\php\arthurius-rest:/var/www/html
             - ./php/sites-available:/etc/nginx/sites-available
@@ -12,10 +12,10 @@ services:
     mysql:
         build: ./mysql
         ports:
-            - "3306:3306"
+            - 3306:3306
         environment:
-            - MYSQL_ROOT_PASSWORD=fizzye
-            - MYSQL_DATABASE=arthurius
+            MYSQL_ROOT_PASSWORD: "fizzye"
+            MYSQL_DATABASE : "arthurius"
         volumes:
             - ./mysql/conf:/etc/mysql/conf.d
             - ./mysql/sql:/docker-entrypoint-initdb.d/

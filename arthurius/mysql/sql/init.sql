@@ -913,7 +913,7 @@ CREATE TABLE IF NOT EXISTS `slider` (
   `title1` varchar(50) DEFAULT NULL,
   `title2` varchar(255) DEFAULT NULL,
   `description` text,
-  `link` varchar(50) NOT NULL,
+  `link` varchar(50),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 

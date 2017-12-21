@@ -1,0 +1,11 @@
+﻿version: '2.1'
+services:
+    nginxproxy:
+        build: ./proxy
+        ports:
+            - 80:80
+        volumes:
+            - ./proxy/proxy.conf:/etc/nginx/conf.d/proxy.conf
+        environment:
+            - NGINX_HOST=kraken.local.test
+            - NGINX_PORT=80

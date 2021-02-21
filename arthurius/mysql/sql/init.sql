@@ -1233,3 +1233,15 @@ CREATE TABLE IF NOT EXISTS `user_order` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
+
+--
+-- Structure de la table `video`
+--
+
+CREATE TABLE IF NOT EXISTS `video` (
+                                            `id` SERIAL NOT NULL AUTO_INCREMENT,
+                                            `ref` varchar(50) NOT NULL,
+                                            `title` varchar(50) NOT NULL,
+                                            PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -786,6 +786,11 @@ alter table product add column instock boolean NOT NULL default true;
 alter table product change piece comment varchar(100);
 alter table product drop column ref;
 
+-- Sample NEW STRUCTURE
+-- INSERT INTO `product` (`id`, `type`, `marque`, `name`, `description`, `picture`, `manche`, `acier`, `size`, `youtube_ref`, `price`, `comment`,`promo`,`instock`) VALUES
+-- (738, 'homemade', 'Arthurius', 'Le Bourd', NULL, 'yatagan.jpg', 'genévrier', '12c27', 'lame : 10 cm, ouvert : 22 cm', NULL, 65, 'The best knife ever', false, true),
+-- (739, 'homemade', 'Arthurius', 'Le Bourd2', NULL, 'kodiak.jpg', 'genévrier', '12c27', 'lame : 10 cm, ouvert : 22 cm', NULL, 65, 'The best knife ever 2', false, true);
+
 --
 -- Structure de la table `brands`
 --
@@ -1245,3 +1250,32 @@ CREATE TABLE IF NOT EXISTS `video` (
                                             `title` varchar(50) NOT NULL,
                                             PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `product_advanced`
+--
+
+CREATE TABLE IF NOT EXISTS `product_advanced` (
+                                         `id` int(11) NOT NULL AUTO_INCREMENT,
+                                         `type` varchar(25) NOT NULL DEFAULT '',
+                                         `name` varchar(50) NOT NULL DEFAULT '',
+                                         `description` varchar(1800) DEFAULT NULL,
+                                         `pictures` varchar(300) DEFAULT NULL,
+                                         `youtube_ref` varchar(30) DEFAULT NULL,
+                                         `instock` boolean NOT NULL default true,
+                                         `price` float DEFAULT NULL,
+                                         `comment` text NULL,
+                                         PRIMARY KEY (`id`),
+                                         KEY `name` (`name`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=738;
+
+--
+-- Contenu de la table `product_advanced`
+--
+
+INSERT INTO `product_advanced` (`id`, `type`, `name`, `description`, `pictures`, `youtube_ref`, `instock`, `price`, `comment`) VALUES
+ (1, 'homemade', 'Homemade Knife One', '1515 phacochère, Pièce unique, fabriqué à Thiers par Manu laplace', 'homemadeone.jpg,homemadetwo.jpg', null, true, 66.0, 'Ivoire de phacochère et corne de buffle, lame : 8,5 cm'),
+ (2, 'homemade', 'Homemade Knife Two', '1515bis phacochère, Pièce unique, fabriqué à Thiers par Manu laplace', 'homemadeone.jpg,homemadetwo.jpg', null, true, 166.0, 'Ivoire de phacochère et corne de buffle, lame : 8,5 cm')
+;

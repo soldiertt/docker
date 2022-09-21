@@ -6,7 +6,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 CREATE TABLE `slider_product`
 (
   `product_id` INT(11) PRIMARY KEY NOT NULL
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 --
@@ -160,7 +160,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `brand` varchar(50) NOT NULL DEFAULT '',
   `name` varchar(50) NOT NULL DEFAULT '',
   `description` varchar(1800) DEFAULT NULL,
-  `picture` varchar(300) DEFAULT NULL,
+  `pictures` varchar(300) DEFAULT NULL,
   `handle` varchar(50) DEFAULT NULL,
   `steel` varchar(50) DEFAULT NULL,
   `size` varchar(50) DEFAULT NULL,
@@ -180,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `product` (
 -- Contenu de la table `product`
 --
 
-INSERT INTO `product` (`id`, `type`, `brand`, `name`, `description`, `picture`, `handle`, `steel`, `size`, `youtube_ref`, `price`, `comment`, `promo`, `old_price`, `instock`) VALUES
+INSERT INTO `product` (`id`, `type`, `brand`, `name`, `description`, `pictures`, `handle`, `steel`, `size`, `youtube_ref`, `price`, `comment`, `promo`, `old_price`, `instock`) VALUES
 (3, 'rasoirs', '3 Claveles', '3 C plus mate coupe', '3 Claveles , ciseaux haut de gamme à prix concurrentiel', 'ciscoif3cl.jpg', NULL, '58 hrc', '5,5\"', 'fHC4VWzReZ0', 69, NULL, 0, NULL, 1),
 (4, 'rasoirs', '3 Claveles', '3 C kit de coupe', '3 Claveles , anneaux en aluminium bleu métallique, repose doigt et amortisseur .', 'ciscoif3clbl.jpg', NULL, '58 hrc', '5,5\"', 'fHC4VWzReZ0', 120, NULL, 0, NULL, 1),
 (5, 'rasoirs', '3 Claveles', '3 C ct yellow', '3 Claveles , repose doigt en laiton, visserie en laiton, amortisseur intégré et très haute teneur en carbone pour une durée de coupe imbattable', 'ciscoif3clluxe1.jpg', NULL, '62 hrc', '5,5\"', 'fHC4VWzReZ0', 180, NULL, 0, NULL, 1),
@@ -433,7 +433,7 @@ INSERT INTO `product` (`id`, `type`, `brand`, `name`, `description`, `picture`, 
 (673, 'rasoirs', 'Boker', 'Boker rasoir ', 'answering frequent customer requests, as of now this classic shaving razor is part of our product range. The razor includes a traditional razor blade. Many customers still swear by this proven method. Easy to clean. Chromed full metal construction. Delivered with razor blade. Length: 9.5 cm. Weight: 71 g.', '04bo140.jpg', NULL, NULL, '9,5 cm', NULL, 35, NULL, 0, NULL, 1),
                                                                                                                                                                                     (676, 'canifs', 'COLD STEEL', 'Cold Steel code4 clippoint', 'Tri-ad- lock system', 'cs58tpc.jpg', 'aluminium', NULL, 'lame 8,89 cm', NULL, 89, NULL, 0, NULL, 1),
                                                                                                                                                                                     (683, 'HAIKU', 'Haiku', 'Haiku Deba, (h04)', ' Aiguisé d\'un seul côté \"émouture chiesel\" , couteau de chef japonais traditionnel. Profitez de notre promotion 99,00 € au lieu de 129,00 € ', 'deba.jpg', 'Honoki traité et bague polypropylène noir', 'Inox Molybdène Vanadium Dureté : 56-57 hrc ', 'total : 29 cm,  lame 17 cm', 'mPQKCOrFdps', 129, NULL, 0, NULL, 1);
-INSERT INTO `product` (`id`, `type`, `brand`, `name`, `description`, `picture`, `handle`, `steel`, `size`, `youtube_ref`, `price`, `comment`, `promo`, `old_price`, `instock`) VALUES
+INSERT INTO `product` (`id`, `type`, `brand`, `name`, `description`, `pictures`, `handle`, `steel`, `size`, `youtube_ref`, `price`, `comment`, `promo`, `old_price`, `instock`) VALUES
 (684, 'HAIKU', 'Haiku', 'Haiku bread, (h08)', 'Le couteau Haiku est très réputé dans les cuisines professionnelles pour offrir une qualité de coupe à la fois précise, performante et durable. La lame est composée d\'un acier 0,8% de carbone + Molybdène et Vanadium. Le manche est en bois de honoki. Le montage se fait par une fixation par virole + clavette en bambou, méthode utilisée depuis des décennies par les Japonais. Le tout est « cimenté » pour répondre entièrement aux normes en vigueur dans les cuisines professionnelles occidentales.   Les couteaux Haiku de Chroma sont authentifiés par le symbole du faucon qui est gravé sur la lame.\r\nCouteau entièrement produit au Japon à Seki. Profitez de notre promotion 59,00 € au lieu de 79,00 € ', 'h08.jpg', 'Honoki traité et bague polypropylène noir', 'Inox Molybdène Vanadium Dureté : 56-57 hrc ', 'total : 38 cm,  lame 25 cm', 'TS0DxGT9AUE', 79, NULL, 0, NULL, 1),
 (686, 'kai', 'KAI', 'Kai Magoroku compo. universel', 'La série innovante Seki Magoroku Composite comprend 8 formes de\r\nlames aiguisées sur les deux côtés.\r\nLa lame est finement réalisée avec deux types d’acier qui créent un\r\ncontraste captivant entre le dos de la lame satiné et le tranchant polis\r\nmiroir. Le noyau polis miroir de la lame est fabriqué en acier VG d’une\r\ndureté de 61±1 HRC et la partie extérieure satinée en acier SUS420J2 : une\r\ncombinaison qui garantit la haute résistance à la corrosion et la longue\r\ndurée de vie de la lame.\r\nLe procès de fabrication de la lame Composite s’inspire à une\r\nnouvelle technologie de construction aéronautique qui garantit stabilité\r\nincomparable et précision extrême. Les deux aciers sont unis grâce à une\r\ntechnique de brasage du cuivre qui laisse visible la fine ligne de cuivre\r\nentre les deux matériaux et ajoute ainsi un détail stylistique sophistiqué.\r\nLa forme et la belle veinure transverse du manche en bois pakka clair\r\nconfèrent une dynamique extrêmement légère à ces couteaux.', 'mgc401.jpg', 'bois pakka clair', 'composite 420j2/vg10 61 hrc', 'lame: 15 cm, manche 9,5 cm', NULL, 170, '', 0, NULL, 1),
 (687, 'kai', 'KAI', 'Kai Magoroku compo. santoku', 'La série innovante Seki Magoroku Composite comprend 8 formes de\r\nlames aiguisées sur les deux côtés.\r\nLa lame est finement réalisée avec deux types d’acier qui créent un\r\ncontraste captivant entre le dos de la lame satiné et le tranchant polis\r\nmiroir. Le noyau polis miroir de la lame est fabriqué en acier VG d’une\r\ndureté de 61±1 HRC et la partie extérieure satinée en acier SUS420J2 : une\r\ncombinaison qui garantit la haute résistance à la corrosion et la longue\r\ndurée de vie de la lame.\r\nLe procès de fabrication de la lame Composite s’inspire à une\r\nnouvelle technologie de construction aéronautique qui garantit stabilité\r\nincomparable et précision extrême. Les deux aciers sont unis grâce à une\r\ntechnique de brasage du cuivre qui laisse visible la fine ligne de cuivre\r\nentre les deux matériaux et ajoute ainsi un détail stylistique sophistiqué.\r\nLa forme et la belle veinure transverse du manche en bois pakka clair\r\nconfèrent une dynamique extrêmement légère à ces couteaux.', 'mgc402.jpg', 'bois pakka clair', 'composite 420j2/vg10 61 hrc', 'lame: 16,5 cm, manche 12 cm', NULL, 239, 'NEW !!', 0, NULL, 1),
@@ -792,6 +792,6 @@ CREATE TABLE IF NOT EXISTS `product_advanced` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=738;
 
 INSERT INTO `product_advanced` (`id`, `type`, `name`, `description`, `pictures`, `youtube_ref`, `instock`, `price`, `comment`) VALUES
- (1, 'homemade', 'Homemade Knife One', '1515 phacochère, Pièce unique, fabriqué à Thiers par Manu laplace', 'homemadeone.jpg,homemadetwo.jpg', null, true, 66.0, 'Ivoire de phacochère et corne de buffle, lame : 8,5 cm'),
- (2, 'homemade', 'Homemade Knife Two', '1515bis phacochère, Pièce unique, fabriqué à Thiers par Manu laplace', 'homemadeone.jpg,homemadetwo.jpg', null, true, 166.0, 'Ivoire de phacochère et corne de buffle, lame : 8,5 cm')
+ (1, 'homemadeknives', 'Homemade Knife One', '1515 phacochère, Pièce unique, fabriqué à Thiers par Manu laplace', 'homemadeone.jpg,homemadetwo.jpg', null, true, 66.0, 'Ivoire de phacochère et corne de buffle, lame : 8,5 cm'),
+ (2, 'homemadeknives', 'Homemade Knife Two', '1515bis phacochère, Pièce unique, fabriqué à Thiers par Manu laplace', 'homemadeone.jpg,homemadetwo.jpg', null, true, 166.0, 'Ivoire de phacochère et corne de buffle, lame : 8,5 cm')
 ;
